@@ -50,7 +50,9 @@
       <a href="#how">How scoping works</a>
       <a href="#services">Services</a>
       <a href="#ai">AI layer</a>
+      <a href="#portal">The portal</a>
       <a href="#plans">Plans</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="btn btn-seal btn-sm" href="#contact">Book a scoping call</a>
@@ -283,6 +285,83 @@
   </div>
 </section>
 
+<!-- ================================================================ portal -->
+<section class="sec" id="portal">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">The deliverable</p>
+      <h2>A finding, the day<br>we confirm it</h2>
+      <p class="lede">Not a document that arrives six weeks later describing a system you have
+        since changed. Findings land as they are verified, your engineers argue with us in the
+        thread, and the retest is recorded against the same finding.</p>
+    </div>
+
+    <div class="app">
+      <div class="app-hd">
+        <span class="dot" aria-hidden="true"></span>
+        <span>acme-retail — continuous programme</span>
+        <span class="grow">Finding 14 of 31</span>
+      </div>
+      <div class="app-body">
+        <div class="f-head">
+          <span class="sev sev-high">High</span>
+          <span class="state">Published</span>
+          <h3>Authorisation bypass on the admin order endpoint</h3>
+          <p class="f-meta">Raised 4 March · reproduced by hand · retested 11 March</p>
+        </div>
+
+        <dl class="f-sections">
+          <div>
+            <dt>What it is</dt>
+            <dd>Any authenticated user can read and modify orders belonging to other customers by
+              changing a single identifier in the request path.</dd>
+          </div>
+          <div>
+            <dt>Technical detail</dt>
+            <dd>The handler checks that a session exists but never that the session owns the
+              order. <code>GET /api/orders/{id}</code> returns any record; <code>PUT</code>
+              accepts writes to it. A standard customer account is enough.</dd>
+          </div>
+          <div>
+            <dt>Impact</dt>
+            <dd>Every order in the system — names, addresses, contents and totals — is readable by
+              anyone who can register. Order contents can be altered before fulfilment.</dd>
+          </div>
+          <div>
+            <dt>What to do</dt>
+            <dd>Authorise on ownership, not on authentication: resolve the order through the
+              session's customer rather than trusting the identifier. The same pattern appears on
+              three other routes, listed in finding 17.</dd>
+          </div>
+        </dl>
+
+        <div class="thread">
+          <p class="thread-lbl">Discussion</p>
+          <div class="msg">
+            <span class="who">Client · Eng</span>
+            <p>Is this reachable without an account, or does it need a registered customer?</p>
+          </div>
+          <div class="msg staff">
+            <span class="who">GetHacked</span>
+            <p>Registered customer, but registration is open — so the practical barrier is an
+              email address. We have attached the exact request.</p>
+          </div>
+          <div class="msg">
+            <span class="who">Client · Eng</span>
+            <p>Fixed in 2.4.1, deployed this morning. Can you check it?</p>
+          </div>
+          <div class="msg event">
+            <span class="who">Retest</span>
+            <p>Verified closed · 11 March · report reissued</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mock-note">Illustration of the portal. The target is a reserved example domain and
+      the finding is representative, not a client's.</p>
+  </div>
+</section>
+
 <!-- ================================================================ plans -->
 <section class="sec" id="plans">
   <div class="wrap">
@@ -364,6 +443,9 @@
       </div>
     </div>
 
+      <p class="mock-note">All prices exclude VAT. What a tier includes is fixed in a written
+        proposal before anything starts.</p>
+
       <p class="note note-spaced"><b>Incident response is contracted separately.</b> Not a line
         in a tier — scope, availability and rate are agreed per organisation, because a promise
         to pick up during your worst day is not something to buy from a pricing table. Talk to
@@ -389,6 +471,79 @@
       </form>
       <p class="scan-note" id="scan-note">Not live yet — we are rebuilding this on sources that
         stay up. Want it run by hand in the meantime? <a href="#contact">Ask us</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ faq -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Before you ask</p>
+      <h2>The questions<br>everyone asks</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Will testing break production?</summary>
+        <p>It is the first thing we agree and it is written into the rules of engagement. Most
+          continuous work runs against staging or a production-like environment; where we do test
+          production, destructive checks are excluded by name, we agree a window, and you get a
+          phone number that reaches the tester during it. If something does go wrong we stop and
+          tell you immediately — we have never been the reason an outage lasted longer.</p>
+      </details>
+      <details>
+        <summary>Who actually does the testing?</summary>
+        <p>A named human, and on the continuous tiers the same one across the year — which is the
+          point. A tester who already knows your stack spends their time on your authorisation
+          logic instead of relearning your architecture every quarter. You will know their name
+          before the engagement starts.</p>
+      </details>
+      <details>
+        <summary>What happens if you find something critical mid-engagement?</summary>
+        <p>You hear about it that day, by phone, before it is written up. Nobody sits on a
+          critical finding until the report is tidy. The write-up follows; the warning does not
+          wait for it.</p>
+      </details>
+      <details>
+        <summary>Where does our data go?</summary>
+        <p>The platform is EU-hosted and each engagement runs in its own isolated tenant, wiped at
+          closeout. Some frontier testing models are not yet available in the EU — those are
+          opt-in, named in your engagement letter, and never a default. If you would rather we use
+          nothing outside the EU, say so and we will not.</p>
+      </details>
+      <details>
+        <summary>Do you sign NDAs?</summary>
+        <p>Yes, routinely, and we will sign yours rather than insisting on ours. We also work
+          codename-only where you want it: nothing in our infrastructure has to carry your
+          company name.</p>
+      </details>
+      <details>
+        <summary>What if you do not find anything?</summary>
+        <p>Then you get a report that says so, with the evidence of what was tested and how — which
+          is the thing your customer or auditor actually wants to see. It happens, and it is a
+          good outcome. We will also tell you honestly whether a deeper level of access would have
+          been likely to find more.</p>
+      </details>
+      <details>
+        <summary>How much access should we give you?</summary>
+        <p>More than feels comfortable, usually. Blackbox is the most realistic and the least
+          efficient — you pay for the days we spend discovering what you could have told us in an
+          afternoon. Greybox is the sweet spot for most teams. See the box at the top of this
+          page; it is the same conversation we will have on the call.</p>
+      </details>
+      <details>
+        <summary>Can you start next week?</summary>
+        <p>Often, yes — we are small enough to move quickly and we do not have a sales cycle to
+          feed. Tell us the deadline you are working to. If we cannot meet it we will say so on
+          the first call rather than in week three.</p>
+      </details>
+      <details>
+        <summary>We need this for a customer or an auditor. Does that work?</summary>
+        <p>Yes. You get a report, a management summary, and a letter of attestation your customer
+          or auditor can accept — plus the retest, so what you hand over describes the fixed
+          system rather than the broken one.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -430,7 +585,9 @@
     <a href="#how">How scoping works</a>
     <a href="#services">Services</a>
     <a href="#ai">AI layer</a>
+    <a href="#portal">The portal</a>
     <a href="#plans">Plans</a>
+    <a href="#faq">FAQ</a>
     <a href="#scan">Free scan</a>
     <a href="#contact">Contact</a>
   </nav>

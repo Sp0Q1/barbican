@@ -380,3 +380,87 @@ a { color: inherit; }
   border-bottom: 1px solid transparent; padding-bottom: 2px;
 }
 .ftr-nav a:hover { color: var(--ink); border-bottom-color: var(--seal); }
+
+/* ============================================================
+   PORTAL MOCK — what a finding looks like in the product.
+   Static markup, illustrative data, fictional target.
+   ============================================================ */
+:root { --sev-extreme: #B3261E; --sev-high: #C1560F; --sev-elevated: #8A6A08; --sev-low: #3F6B57; }
+@media (prefers-color-scheme: dark) {
+  :root { --sev-extreme: #F1786F; --sev-high: #E9A15E; --sev-elevated: #D9BE55; --sev-low: #7FBFA1; }
+}
+
+.app { border: 1px solid var(--rule); background: var(--surface); }
+.app-hd {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--smoke);
+}
+.app-hd .dot { width: 6px; height: 6px; background: var(--seal); flex: none; }
+.app-hd .grow { margin-left: auto; }
+.app-body { padding: clamp(1rem, 3vw, 1.75rem); background: var(--paper); }
+
+.f-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.f-head h3 {
+  flex: 1 1 100%; font-family: var(--font-display); text-transform: uppercase;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem); letter-spacing: 0.02em; line-height: 1.1; margin-top: 4px;
+}
+.sev, .state {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 7px; border: 1px solid currentColor; font-weight: 700;
+}
+.sev-high { color: var(--sev-high); }
+.state { color: var(--smoke); font-weight: 400; }
+.f-meta {
+  flex: 1 1 100%; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.04em; color: var(--smoke); margin-top: 2px;
+}
+
+.f-sections { margin: 20px 0 0; display: grid; gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); }
+.f-sections > div { background: var(--paper); padding: 13px 15px; }
+.f-sections dt {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--seal-dim); margin-bottom: 5px;
+}
+.f-sections dd { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.f-sections code {
+  font-family: var(--font-mono); font-size: 12.5px;
+  background: var(--sunken); padding: 1px 5px;
+}
+
+.thread { margin-top: 20px; border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 13px; }
+.thread-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--smoke); }
+.msg { display: flex; gap: 11px; }
+.who {
+  flex: none; width: 92px; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--smoke); padding-top: 2px;
+}
+.msg.staff .who { color: var(--seal-dim); font-weight: 700; }
+.msg p { font-size: 14.5px; line-height: 1.5; }
+.msg.event { align-items: center; }
+.msg.event p {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--sev-low);
+}
+.mock-note { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--smoke); margin-top: 12px; }
+
+/* ---------------------------------------------------------- FAQ (no script) */
+.faq { border: 1px solid var(--rule-soft); }
+.faq details { border-bottom: 1px solid var(--rule-soft); }
+.faq details:last-child { border-bottom: 0; }
+.faq summary {
+  cursor: pointer; padding: 15px 16px; list-style: none;
+  font-family: var(--font-display); text-transform: uppercase;
+  font-size: 15px; letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 12px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before {
+  content: "+"; flex: none; font-family: var(--font-mono); font-size: 15px;
+  color: var(--seal); font-weight: 700; width: 12px;
+}
+.faq details[open] summary::before { content: "−"; }
+.faq summary:hover { background: var(--surface); }
+.faq p { padding: 0 16px 16px 40px; font-size: 14.5px; line-height: 1.55; color: var(--smoke); max-width: 74ch; }
+.faq p + p { padding-top: 0; margin-top: -6px; }
