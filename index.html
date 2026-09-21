@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GetHacked.eu — Continuous offensive security</title>
+<meta name="description" content="Continuous pentesting and attack-surface monitoring for teams that ship code and have a perimeter. Findings land in a live portal, verified by a human, not a PDF that is stale on arrival.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="roe">
+  <div class="roe-in">
+    <div class="tape" aria-hidden="true"></div>
+    <span>Every engagement begins with a signed scope and rules of engagement. No exceptions, no surprises.</span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="mark" href="#top">
+      <svg viewBox="62 57 111 125" role="img" aria-labelledby="glider-title">
+        <title id="glider-title">A Game of Life glider, drawn as five isometric cube faces</title>
+        <polygon fill="var(--glider-accent, currentColor)" points="100,97.69 69.36,80 100,62.31 130.64,80"/>
+        <g fill="currentColor">
+          <polygon points="98,141.15 67.36,123.46 67.36,158.85 98,176.54"/>
+          <polygon opacity=".62" points="102,141.15 132.64,123.46 132.64,158.85 102,176.54"/>
+          <polygon opacity=".62" points="136.64,81.15 167.28,63.46 167.28,98.85 136.64,116.54"/>
+          <polygon opacity=".62" points="136.64,121.15 167.28,103.46 167.28,138.85 136.64,156.54"/>
+        </g>
+      </svg>
+      <span>GetHacked</span>
+    </a>
+    <nav class="nav">
+      <a href="#how">How scoping works</a>
+      <a href="#services">Services</a>
+      <a href="#ai">AI layer</a>
+      <a href="#plans">Plans</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-seal btn-sm" href="#contact">Book a scoping call</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================================================================ hero -->
+<section class="hero wrap">
+  <p class="eyebrow">Offensive security · EU · human-verified findings</p>
+  <h1>We find the way in <em>first</em></h1>
+  <p class="lede">Before someone who means it does. Continuous pentesting and always-on
+    attack-surface monitoring for teams that ship code <em>and</em> have a perimeter — with
+    findings in a live portal your engineers can actually work from, not a PDF that is stale
+    the day it lands.</p>
+  <div class="hero-cta">
+    <a class="btn btn-seal" href="#contact">Book a scoping call</a>
+    <a class="btn" href="#how">See how scoping works</a>
+  </div>
+  <p class="hero-proof">
+    <span>A tester replies, not a salesperson</span>
+    <span>Signed rules of engagement</span>
+    <span>Every finding reproduced by hand</span>
+  </p>
+</section>
+
+<!-- ================================================================ the box -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">How scoping works</p>
+      <h2>A pentest is a box</h2>
+      <p class="lede">It has a height, a width and a depth. Height is how much you put in it.
+        Depth is how much of the machinery you let us see. Width — the time — is not something
+        you pick first; it follows from the other two.</p>
+    </div>
+
+    <div class="boxpick box-grid">
+      <div class="stage">
+        <div class="scene">
+          <div class="box">
+            <div class="f f-back"></div><div class="f f-bottom"></div>
+            <div class="inside" aria-hidden="true">
+              <svg viewBox="0 0 141 100"><g class="works">
+                <circle class="gear" cx="46" cy="46" r="22" stroke-dasharray="7 6" stroke-width="8"/>
+                <circle cx="46" cy="46" r="8"/>
+                <path class="thin" d="M46 46 L46 28 M46 46 L60 58 M46 46 L32 58"/>
+                <circle class="gear rev" cx="94" cy="70" r="14" stroke-dasharray="5 5" stroke-width="6"/>
+                <path class="thin" d="M46 14 L46 6 L122 6 L122 34"/>
+                <rect x="112" y="30" width="20" height="14" rx="2"/>
+              </g></svg>
+            </div>
+            <div class="f f-left"></div><div class="f f-top"></div>
+            <div class="f f-right"></div><div class="f f-front"></div>
+          </div>
+          <div class="shadow" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="pick">
+          <span class="pick-lbl" id="acc-lbl">Depth — how much we get to see</span>
+          <div class="segs" role="radiogroup" aria-labelledby="acc-lbl">
+            <label>Blackbox<input type="radio" name="access" id="acc-black" checked></label>
+            <label>Greybox<input type="radio" name="access" id="acc-grey"></label>
+            <label>Crystalbox<input type="radio" name="access" id="acc-crystal"></label>
+          </div>
+        </div>
+
+        <div class="pick">
+          <span class="pick-lbl" id="sz-lbl">Height — how much goes in</span>
+          <div class="segs" role="radiogroup" aria-labelledby="sz-lbl">
+            <label>One app<input type="radio" name="size" id="sz-s"></label>
+            <label>A product<input type="radio" name="size" id="sz-m" checked></label>
+            <label>The estate<input type="radio" name="size" id="sz-l"></label>
+          </div>
+        </div>
+
+        <div class="cap">
+          <p class="c-black"><b>Painted shut.</b> You give us a domain and permission, nothing
+            more. You learn exactly what a stranger can reach — and the first days go to
+            reconnaissance, because that is the point.</p>
+          <p class="c-grey"><b>Frosted glass.</b> Credentials for each role and an architecture
+            sketch. Usually the sweet spot: we skip the guessing and spend the time on your
+            authorisation logic instead.</p>
+          <p class="c-crystal"><b>Clear glass.</b> Source, pipelines, cloud config and an engineer
+            to answer questions. Finds the flaws no amount of poking from outside will surface —
+            every hour buys depth rather than discovery.</p>
+        </div>
+
+        <dl class="axes">
+          <div class="axis"><dt>Height</dt><dd>What goes in the box — <b>and what must stay out</b>. Agreed in writing before anything starts.</dd></div>
+          <div class="axis"><dt>Depth</dt><dd>How much you hand us up front. <b>More access finds more</b>; less access is more realistic.</dd></div>
+          <div class="axis"><dt>Width</dt><dd>Time. <b>Derived, not chosen</b> — we tell you what the box needs, and what a shorter one costs you.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ services -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">What we do</p>
+      <h2>Testing that keeps up<br>with your release train</h2>
+      <p class="lede">A test once a year describes a codebase that no longer exists. Everything
+        below is built to run continuously instead — and each one is available as a single
+        engagement if that is all you need.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Continuous pentesting</h3>
+        <p>Blackbox to crystalbox, run against every meaningful change rather than once on a
+          calendar. Findings are re-checked on the next release, so a fix that regresses gets
+          caught the same week.</p>
+        <p class="tag">The core</p>
+      </article>
+      <article class="card">
+        <h3>Attack-surface monitoring</h3>
+        <p>Always on. A fresh subdomain, a forgotten port, an expired certificate, a leaked key —
+          surfaced within hours, from multiple independent sources rather than one flaky feed.</p>
+        <p class="tag">Included from the first tier</p>
+      </article>
+      <article class="card">
+        <h3>Single engagements</h3>
+        <p>One pentest, scoped to the euro, no subscription. Blackbox to crystalbox, with the
+          report, the executive summary and a closeout call. Plenty of clients only ever work
+          with us this way.</p>
+        <p class="tag">From one box</p>
+      </article>
+      <article class="card">
+        <h3>AI-augmented testing</h3>
+        <p>Reads your whole codebase instead of the sample a human has time for, and replays the
+          finding set against every build. Included at no extra charge — and never the thing that
+          signs off a finding.</p>
+        <p class="tag">On every engagement</p>
+      </article>
+      <article class="card">
+        <h3>The findings portal</h3>
+        <p>Findings arrive as they are confirmed, with reproduction steps, impact in plain
+          language and a fix your engineers can pick up the same day. Comment on them, track the
+          retest, export when you need the PDF.</p>
+        <p class="tag">The deliverable</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ ai -->
+<section class="sec" id="ai">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Included on every engagement</p>
+      <h2>AI-augmented,<br>human-signed</h2>
+      <p class="lede">Machines are extraordinary at reading an entire codebase and never getting
+        bored. They are terrible at knowing which bug matters to your business. We use each for
+        what it is good at, and a human puts their name on the report either way.</p>
+    </div>
+
+    <div class="ai-grid">
+      <div class="split does">
+        <h3>What the AI layer does</h3>
+        <ul>
+          <li>Reads every route, handler and IaC file in scope — not the sample a human would have time for.</li>
+          <li>Maps the authorisation matrix across roles and flags the combinations nobody documented.</li>
+          <li>Drafts and mutates payloads against candidate injection points, then triages the noise.</li>
+          <li>Replays the whole finding set against each new build, so a regressed fix gets caught.</li>
+          <li>Writes the first draft of the reproduction steps. The tester rewrites what is wrong.</li>
+        </ul>
+      </div>
+      <div class="split doesnt">
+        <h3>What it never does</h3>
+        <ul>
+          <li>Exploit anything without a named human approving the action against the signed scope.</li>
+          <li>Touch production data, or any system outside the agreed rules of engagement.</li>
+          <li>Put a finding in your report unverified — every one is reproduced by hand first.</li>
+          <li>Reach a model outside the EU without your prior written approval.</li>
+          <li>Replace the tester. It buys back the days they would have spent on grep.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note note-spaced">
+      <b>On where your data goes.</b> The platform is EU-hosted. Some frontier testing models are
+      not yet available in the EU, so those are opt-in and named in your engagement letter — never
+      a default, never without written approval. By default everything runs in an isolated tenant
+      that is wiped at closeout.
+    </p>
+  </div>
+</section>
+
+<!-- ================================================================ plans -->
+<section class="sec" id="plans">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Annual · billed monthly</p>
+      <h2>Pick your coverage</h2>
+      <p class="lede">Every tier includes attack-surface monitoring, the findings portal,
+        unlimited retests on what we raise, and a member rate on single engagements. What changes
+        is how much testing time sits behind it.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="plan">
+        <p class="plan-kick">Tier 1 · Watch</p>
+        <h3>Perimeter</h3>
+        <p class="plan-desc">Eyes on everything you expose, plus continuous testing on a
+          best-effort basis as capacity allows.</p>
+        <p class="plan-price">€250<small>Per month · annual</small></p>
+        <ul>
+          <li>Continuous attack-surface monitoring</li>
+          <li>New-exposure alerts within 24 hours</li>
+          <li>Best-effort continuous pentesting</li>
+          <li>Unlimited retests on our findings</li>
+          <li>Member rate on single engagements</li>
+        </ul>
+        <a class="btn" href="#contact">Start watching</a>
+      </div>
+
+      <div class="plan pick-me">
+        <p class="plan-kick">Tier 2 · Recommended</p>
+        <h3>Assurance</h3>
+        <p class="plan-desc">Where committed testing time begins — a fixed number of tester hours
+          every month, not best-effort.</p>
+        <p class="plan-price">€500<small>Per month · annual</small></p>
+        <ul>
+          <li>Everything in Perimeter</li>
+          <li>Fixed tester hours each month</li>
+          <li>AI-augmented regression replay on every change</li>
+          <li>Named point of contact</li>
+          <li>Findings triaged within one working day</li>
+        </ul>
+        <a class="btn btn-seal" href="#contact">Start with Assurance</a>
+      </div>
+
+      <div class="plan">
+        <p class="plan-kick">Tier 3 · Full stack</p>
+        <h3>Adversary</h3>
+        <p class="plan-desc">More hours, deeper access, and a named tester who learns how you
+          build rather than re-reading your stack each time.</p>
+        <p class="plan-price">€750<small>Per month · annual</small></p>
+        <ul>
+          <li>Everything in Assurance</li>
+          <li>Greybox and crystalbox coverage, not just the perimeter</li>
+          <li>Named lead tester across the year</li>
+          <li>Quarterly review with your engineers</li>
+          <li>Priority scheduling on single engagements</li>
+        </ul>
+        <a class="btn" href="#contact">Talk to us</a>
+      </div>
+
+      <div class="plan">
+        <p class="plan-kick">Tier 4 · Dedicated</p>
+        <h3>Enterprise</h3>
+        <p class="plan-desc">A standing team built around your organisation — custom scope,
+          cadence and SLAs.</p>
+        <p class="plan-price">Custom<small>Scoped to your org</small></p>
+        <ul>
+          <li>Everything in Adversary</li>
+          <li>Dedicated team, custom scope and cadence</li>
+          <li>Red and purple teaming included</li>
+          <li>Custom SLAs and reporting</li>
+          <li>Training seats and integrations</li>
+        </ul>
+        <a class="btn" href="#contact">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ scan (placeholder) -->
+<section class="sec" id="scan">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Coming shortly</p>
+      <h2>See your attack surface<br>before you talk to us</h2>
+      <p class="lede">Give us a domain and we will show you what we can see from the outside —
+        subdomains, exposed services, certificate history — the same first pass we run at the
+        start of an engagement. No account, no sales call.</p>
+    </div>
+
+    <div class="scan">
+      <form class="scan-row" action="#contact" aria-describedby="scan-note">
+        <input type="text" name="domain" placeholder="yourcompany.eu" aria-label="Your domain" disabled>
+        <span class="btn btn-seal" aria-disabled="true">Run the free scan</span>
+      </form>
+      <p class="scan-note" id="scan-note">Not live yet — we are rebuilding this on sources that
+        stay up. Want it run by hand in the meantime? <a href="#contact">Ask us</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ contact -->
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2 class="contact-h2">Tell us what you have built. We will tell you what it <em>costs.</em></h2>
+      <p class="lede">No discovery deck, no qualification funnel. A tester — not a salesperson —
+        reads what you send and replies with a written scope and a fixed price within two working
+        days.</p>
+      <dl class="direct">
+        <div><dt>Direct</dt><dd><a href="mailto:security@gethacked.eu">security@gethacked.eu</a></dd></div>
+        <div><dt>Company</dt><dd>LaatJeHacken B.V. · Sleeuwijk, NL</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="panel">
+        <p class="eyebrow">What to send</p>
+        <p class="panel-body">
+          Roughly what you run and where it lives, what you would like tested, anything that must
+          stay out of scope, and when you need it. That is enough for a written scope — we will
+          come back with the questions that actually change the number.
+        </p>
+        <p class="panel-cta">
+          <a class="btn btn-seal" href="mailto:security@gethacked.eu?subject=Scoping%20request">Send a scoping request</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="ftr-in">
+    <span>GetHacked.eu · LaatJeHacken B.V.</span>
+    <span>Signed rules of engagement on every job</span>
+    <span class="grow"></span>
+    <span>EU-hosted platform</span>
+  </div>
+</footer>
+
+</body>
+</html>
