@@ -358,3 +358,25 @@ a { color: inherit; }
 .panel-cta { margin-top: 18px; }
 .cap { margin-top: 20px; }
 .note-spaced { margin-top: 22px; }
+
+/* ---------------------------------------------------------- skip link */
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--seal); color: var(--seal-ink); padding: 10px 16px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.skip:focus { left: 0; }
+
+/* ---------------------------------------------------------- footer nav
+   The header nav is hidden below 860px, so this is the only navigation on a
+   phone — it is not decoration. */
+.ftr-nav {
+  max-width: var(--maxw); margin-inline: auto; padding: 20px var(--gut) 0;
+  display: flex; flex-wrap: wrap; gap: 10px 22px;
+}
+.ftr-nav a {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none; color: var(--smoke);
+  border-bottom: 1px solid transparent; padding-bottom: 2px;
+}
+.ftr-nav a:hover { color: var(--ink); border-bottom-color: var(--seal); }
