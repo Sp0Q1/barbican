@@ -82,23 +82,25 @@
   </ul>
 </section>
 
-<!-- ================================================================ fit -->
-<section class="fit wrap" aria-label="Who this is for">
-  <div class="fit-col">
-    <p class="eyebrow">This is for you if</p>
-    <ul>
-      <li>You ship changes every few weeks and something you run is reachable from the internet.</li>
-      <li>You have engineers who will actually fix what we find — and want to argue about it in the thread.</li>
-      <li>You would rather know now than find out from a customer, a researcher, or a ransom note.</li>
-    </ul>
-  </div>
-  <div class="fit-col">
-    <p class="eyebrow">Probably not, if</p>
-    <ul>
-      <li>You need a certificate more than findings. We can do that — but a single engagement is the cheaper way to get it.</li>
-      <li>Nothing you run changes and nothing is exposed. Then once a year is genuinely fine, and we will say so.</li>
-      <li>You are having an incident right now. Email us anyway — that is a different conversation and we will have it today.</li>
-    </ul>
+<!-- ================================================================ scan (placeholder) -->
+<section class="sec scan-sec" id="scan">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Free · no account</p>
+      <h2>See your attack surface<br>before you talk to us</h2>
+      <p class="lede">Give us a domain and we will show you what we can see from the outside —
+        subdomains, exposed services, certificate history — the same first pass we run at the
+        start of an engagement. No account, no sales call.</p>
+    </div>
+
+    <div class="panel">
+      <form class="scan-row" aria-describedby="scan-note">
+        <input type="text" name="domain" placeholder="yourcompany.eu" aria-label="Your domain" disabled>
+        <button class="btn btn-seal" type="submit" disabled>Run the free scan</button>
+      </form>
+      <p class="scan-note" id="scan-note">Not live yet. Want it run by hand in the meantime?
+        <a href="#contact">Ask us</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -296,6 +298,13 @@
           tuning detection between runs.</p>
         <p class="tag">Member rate from Adversary · included in Enterprise</p>
       </article>
+      <article class="card">
+        <h3>The findings portal</h3>
+        <p>Findings arrive as they are confirmed, with reproduction steps, impact in plain
+          language and a fix your engineers can pick up the same day. Comment on them, track the
+          retest, export when you need the PDF.</p>
+        <p class="tag">The deliverable — <a href="#portal">see one</a></p>
+      </article>
     </div>
   </div>
 </section>
@@ -465,28 +474,6 @@
         in a tier — scope, availability and rate are agreed per organisation, because a promise
         to pick up during your worst day is not something to buy from a pricing table. Talk to
         us and we will work out what is actually worth committing to.</p>
-  </div>
-</section>
-
-<!-- ================================================================ scan (placeholder) -->
-<section class="sec" id="scan">
-  <div class="wrap">
-    <div class="sec-hd">
-      <p class="eyebrow">Coming shortly</p>
-      <h2>See your attack surface<br>before you talk to us</h2>
-      <p class="lede">Give us a domain and we will show you what we can see from the outside —
-        subdomains, exposed services, certificate history — the same first pass we run at the
-        start of an engagement. No account, no sales call.</p>
-    </div>
-
-    <div class="panel">
-      <form class="scan-row" aria-describedby="scan-note">
-        <input type="text" name="domain" placeholder="yourcompany.eu" aria-label="Your domain" disabled>
-        <button class="btn btn-seal" type="submit" disabled>Run the free scan</button>
-      </form>
-      <p class="scan-note" id="scan-note">Not live yet. Want it run by hand in the meantime?
-        <a href="#contact">Ask us</a>.</p>
-    </div>
   </div>
 </section>
 

@@ -153,19 +153,6 @@ a { color: inherit; }
 }
 .hero-proof li::before { content: "▪ "; color: var(--seal); }
 
-/* ---------------------------------------------------------- who it is for */
-.fit {
-  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 2.5rem);
-  padding-bottom: clamp(2.5rem, 6vw, 4rem);
-}
-@media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
-.fit-col { border-top: 2px solid var(--ink); padding-top: 12px; }
-.fit-col:last-child { border-top-color: var(--rule); }
-.fit-col ul { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-.fit-col li { display: flex; gap: 9px; font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
-.fit-col li::before { content: "▪"; color: var(--seal); flex: none; font-size: 10px; line-height: 2.1; }
-.fit-col:last-child li::before { color: var(--rule); }
-
 /* ============================================================
    THE BOX — CSS-only explainer.
    Three radios drive the material. No script: `:has()` reads the
@@ -287,6 +274,7 @@ a { color: inherit; }
 .card:hover { border-color: var(--rule); background: var(--surface); }
 .card h3 { font-family: var(--font-display); text-transform: uppercase; font-size: 19px; letter-spacing: 0.03em; }
 .card p { font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
+.card .tag a { color: inherit; }
 .card .tag {
   margin-top: auto; padding-top: 11px; border-top: 1px dotted var(--rule);
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
@@ -331,7 +319,13 @@ a { color: inherit; }
 .plan li::before { content: "▪"; color: var(--seal-dim); flex: none; font-size: 10px; line-height: 1.7; }
 .plan .btn { margin-top: auto; justify-content: center; }
 
-/* ---------------------------------------------------------- scan placeholder */
+/* ---------------------------------------------------------- scan */
+.scan-sec { border-top: 0 !important; }
+.scan-sec .panel { position: relative; }
+.scan-sec .panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  background-image: repeating-linear-gradient(-45deg, var(--seal) 0 4px, var(--seal-dim) 4px 8px);
+}
 .scan-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .scan-row input {
   flex: 1 1 260px; min-width: 0; padding: 11px 13px;
