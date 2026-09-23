@@ -24,8 +24,8 @@
     <text x="442" y="366" font-size="36" fill="#59656F" textLength="600" lengthAdjust="spacingAndGlyphs">CONTINUOUS OFFENSIVE SECURITY</text>
   </g>
 
-  <g font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="19" fill="#59656F" textLength="1008" lengthAdjust="spacingAndGlyphs">
-    <text x="96" y="548">■  EU-HOSTED      ■  AI-AUGMENTED, HUMAN-SIGNED      ■  FINDINGS LIVE IN YOUR PORTAL, THE DAY WE CONFIRM THEM</text>
+  <g font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="19" fill="#59656F" letter-spacing="3">
+    <text x="96" y="548">■  EU-HOSTED      ■  AI-AUGMENTED, HUMAN-SIGNED      ■  LIVE FINDINGS PORTAL</text>
   </g>
   <rect x="96" y="500" width="1008" height="1" fill="#C8CDD1"/>
 </svg>
