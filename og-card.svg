@@ -17,13 +17,15 @@
     </g>
   </g>
 
+  <!-- textLength pins every line to its box, so the card renders the same
+       whether or not the exporting machine has a narrow sans installed. -->
   <g font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,sans-serif" font-weight="700">
-    <text x="440" y="300" font-size="112" letter-spacing="10" fill="#14191E">GETHACKED<tspan fill="#C8382C" letter-spacing="4">.EU</tspan></text>
-    <text x="444" y="372" font-size="40" letter-spacing="2" fill="#59656F">CONTINUOUS OFFENSIVE SECURITY</text>
+    <text x="440" y="296" font-size="104" fill="#14191E" textLength="664" lengthAdjust="spacingAndGlyphs">GETHACKED<tspan fill="#C8382C">.EU</tspan></text>
+    <text x="442" y="366" font-size="36" fill="#59656F" textLength="600" lengthAdjust="spacingAndGlyphs">CONTINUOUS OFFENSIVE SECURITY</text>
   </g>
 
-  <g font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="20" fill="#59656F" letter-spacing="3">
-    <text x="96" y="548">■ EU-HOSTED   ■ AI-AUGMENTED, HUMAN-SIGNED   ■ A PENTESTER REPLIES</text>
+  <g font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="19" fill="#59656F" textLength="1008" lengthAdjust="spacingAndGlyphs">
+    <text x="96" y="548">■  EU-HOSTED      ■  AI-AUGMENTED, HUMAN-SIGNED      ■  A PENTESTER REPLIES, NOT A SALESPERSON</text>
   </g>
   <rect x="96" y="500" width="1008" height="1" fill="#C8CDD1"/>
 </svg>
