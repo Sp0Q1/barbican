@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Pages cannot send security headers, so the ones a meta tag can carry live
+     here. frame-ancestors and HSTS cannot be set this way; HSTS comes from
+     "Enforce HTTPS" in the Pages settings. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#E7E9EB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14191E" media="(prefers-color-scheme: dark)">
 <title>GetHacked.eu — Continuous offensive security</title>
