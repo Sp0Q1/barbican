@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#E7E9EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14191E" media="(prefers-color-scheme: dark)">
 <title>GetHacked.eu — Continuous offensive security</title>
 <meta name="description" content="Continuous pentesting and attack-surface monitoring for teams that ship code and have a perimeter. Findings land in a live portal, verified by a human, not a PDF that is stale on arrival.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -59,25 +61,45 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
 <!-- ================================================================ hero -->
 <section class="hero wrap">
   <p class="eyebrow">Offensive security · EU · AI-augmented, human-signed</p>
   <h1>We find the way in <em>first</em></h1>
   <p class="lede">Before someone who means it does. Continuous pentesting and always-on
-    attack-surface monitoring for teams that ship code <em>and</em> have a perimeter — testing
-    that runs on every release rather than once a year, because the machine does the part that
-    is repetitive and a human does the part that is judgement.</p>
+    attack-surface monitoring for teams that ship code <em>and</em> have a perimeter. Testing
+    runs on every release, not once a year — the machine does what is repetitive, a human does
+    what is judgement.</p>
   <div class="hero-cta">
     <a class="btn btn-seal" href="#contact">Book a scoping call</a>
     <a class="btn" href="#how">See how scoping works</a>
   </div>
-  <p class="hero-proof">
-    <span>Your whole codebase read, not a sample</span>
-    <span>Every finding reproduced by hand</span>
-    <span>A tester replies, not a salesperson</span>
-  </p>
+  <ul class="hero-proof">
+    <li>Your whole codebase read, not a sample</li>
+    <li>Every finding reproduced by hand</li>
+    <li>A tester replies, not a salesperson</li>
+  </ul>
+</section>
+
+<!-- ================================================================ fit -->
+<section class="fit wrap" aria-label="Who this is for">
+  <div class="fit-col">
+    <p class="eyebrow">This is for you if</p>
+    <ul>
+      <li>You ship changes every few weeks and something you run is reachable from the internet.</li>
+      <li>You have engineers who will actually fix what we find — and want to argue about it in the thread.</li>
+      <li>You would rather know now than find out from a customer, a researcher, or a ransom note.</li>
+    </ul>
+  </div>
+  <div class="fit-col">
+    <p class="eyebrow">Probably not, if</p>
+    <ul>
+      <li>You need a certificate more than findings. We can do that — but a single engagement is the cheaper way to get it.</li>
+      <li>Nothing you run changes and nothing is exposed. Then once a year is genuinely fine, and we will say so.</li>
+      <li>You are having an incident right now. Email us anyway — that is a different conversation and we will have it today.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ================================================================ the box -->
@@ -268,18 +290,11 @@
         <p class="tag">Tokens from Assurance · deployed from Adversary</p>
       </article>
       <article class="card">
-        <h3>AI-augmented testing</h3>
-        <p>Reads your whole codebase instead of the sample a human has time for, and replays the
-          finding set against every build. Included at no extra charge — and never the thing that
-          signs off a finding.</p>
-        <p class="tag">On every engagement</p>
-      </article>
-      <article class="card">
-        <h3>The findings portal</h3>
-        <p>Findings arrive as they are confirmed, with reproduction steps, impact in plain
-          language and a fix your engineers can pick up the same day. Comment on them, track the
-          retest, export when you need the PDF.</p>
-        <p class="tag">The deliverable</p>
+        <h3>Red &amp; purple teaming</h3>
+        <p>Red: an objective, weeks to reach it quietly, and your defenders are not told — you
+          learn what actually gets noticed. Purple: the same attacks with your team in the room,
+          tuning detection between runs.</p>
+        <p class="tag">Member rate from Adversary · included in Enterprise</p>
       </article>
     </div>
   </div>
@@ -306,7 +321,7 @@
         <div class="f-head">
           <span class="sev sev-high">High</span>
           <span class="state">Published</span>
-          <h3>Authorisation bypass on the admin order endpoint</h3>
+          <p class="f-title">Authorisation bypass on the admin order endpoint</p>
           <p class="f-meta">Raised 4 March · reproduced by hand · retested 11 March</p>
         </div>
 
@@ -464,13 +479,13 @@
         start of an engagement. No account, no sales call.</p>
     </div>
 
-    <div class="scan">
-      <form class="scan-row" action="#contact" aria-describedby="scan-note">
+    <div class="panel">
+      <form class="scan-row" aria-describedby="scan-note">
         <input type="text" name="domain" placeholder="yourcompany.eu" aria-label="Your domain" disabled>
-        <span class="btn btn-seal" aria-disabled="true">Run the free scan</span>
+        <button class="btn btn-seal" type="submit" disabled>Run the free scan</button>
       </form>
-      <p class="scan-note" id="scan-note">Not live yet — we are rebuilding this on sources that
-        stay up. Want it run by hand in the meantime? <a href="#contact">Ask us</a>.</p>
+      <p class="scan-note" id="scan-note">Not live yet. Want it run by hand in the meantime?
+        <a href="#contact">Ask us</a>.</p>
     </div>
   </div>
 </section>

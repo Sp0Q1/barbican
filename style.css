@@ -16,6 +16,8 @@
   --seal:      #C8382C;
   --seal-ink:  #FFFFFF;
   --seal-dim:  #8E2A20;
+  --sev-extreme: #B3261E; --sev-high: #C1560F; --sev-elevated: #8A6A08; --sev-low: #3F6B57;
+  color-scheme: light dark;
 
   --font-display: "Arial Narrow", "Liberation Sans Narrow", "Roboto Condensed", Arial, sans-serif;
   --font-body: Charter, "Bitstream Charter", "Source Serif 4", Georgia, "Liberation Serif", serif;
@@ -36,6 +38,7 @@
     --rule-soft: #232B32;
     --seal:      #D33C2E;
     --seal-dim:  #F0857A;
+    --sev-extreme: #F1786F; --sev-high: #E9A15E; --sev-elevated: #D9BE55; --sev-low: #7FBFA1;
   }
 }
 
@@ -115,7 +118,7 @@ a { color: inherit; }
   padding: 4px 0; border-bottom: 1px solid transparent;
 }
 .nav a:hover { color: var(--ink); border-bottom-color: var(--seal); }
-@media (max-width: 860px) { .nav { display: none; } }
+@media (max-width: 1000px) { .nav { display: none; } }
 
 /* ---------------------------------------------------------- buttons */
 .btn {
@@ -130,7 +133,6 @@ a { color: inherit; }
 .btn-seal { background: var(--seal); border-color: var(--seal); color: var(--seal-ink); font-weight: 700; }
 .btn-seal:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .btn-sm { padding: 8px 13px; font-size: 11px; }
-.btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
 
 /* ---------------------------------------------------------- hero */
 .hero { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 7vw, 5rem); }
@@ -149,7 +151,20 @@ a { color: inherit; }
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--smoke);
 }
-.hero-proof span::before { content: "▪ "; color: var(--seal); }
+.hero-proof li::before { content: "▪ "; color: var(--seal); }
+
+/* ---------------------------------------------------------- who it is for */
+.fit {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+@media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
+.fit-col { border-top: 2px solid var(--ink); padding-top: 12px; }
+.fit-col:last-child { border-top-color: var(--rule); }
+.fit-col ul { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.fit-col li { display: flex; gap: 9px; font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
+.fit-col li::before { content: "▪"; color: var(--seal); flex: none; font-size: 10px; line-height: 2.1; }
+.fit-col:last-child li::before { color: var(--rule); }
 
 /* ============================================================
    THE BOX — CSS-only explainer.
@@ -187,6 +202,15 @@ a { color: inherit; }
 }
 .stage:hover .box { transform: rotateX(-16deg) rotateY(44deg); }
 .f { position: absolute; border: 1px solid var(--smoke); }
+/* Blackbox is the resting state, so a browser without :has() still shows a
+   box; the other materials override it below. Fixed tones, not theme
+   tokens: opaque paint has to read as opaque on both grounds. */
+.f-front  { background: #1a212b; }
+.f-right  { background: #0e141c; }
+.f-left   { background: #141b24; }
+.f-top    { background: #28323f; }
+.f-back   { background: #121821; }
+.f-bottom { background: #0a0e14; }
 .f-front, .f-back { width: var(--w); height: var(--h); top: 0; left: 0; }
 .f-front { transform: translateZ(calc(var(--d)/2)); }
 .f-back  { transform: rotateY(180deg) translateZ(calc(var(--d)/2)); }
@@ -201,7 +225,7 @@ a { color: inherit; }
   background: radial-gradient(ellipse at center, rgba(3,10,18,.35), transparent 68%);
   filter: blur(4px);
 }
-.inside { position: absolute; top: 50%; left: 50%; width: calc(var(--w)*.9); height: calc(var(--h)*.88); transform: translate(-50%,-50%); }
+.inside { opacity: 0; position: absolute; top: 50%; left: 50%; width: calc(var(--w)*.9); height: calc(var(--h)*.88); transform: translate(-50%,-50%); }
 .inside svg { width: 100%; height: 100%; overflow: visible; }
 .works { stroke: var(--seal); fill: none; stroke-width: 2; }
 .works .thin { stroke-width: 1.2; opacity: .65; }
@@ -209,22 +233,13 @@ a { color: inherit; }
 .gear.rev { animation-direction: reverse; animation-duration: 11s; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Fixed face tones, not theme tokens: blackbox must read as opaque paint
-   on both grounds, and the smoke border keeps every face legible either way. */
-.boxpick:has(#acc-black:checked) .f-front  { background: #1a212b; }
-.boxpick:has(#acc-black:checked) .f-right  { background: #0e141c; }
-.boxpick:has(#acc-black:checked) .f-left   { background: #141b24; }
-.boxpick:has(#acc-black:checked) .f-top    { background: #28323f; }
-.boxpick:has(#acc-black:checked) .f-back   { background: #121821; }
-.boxpick:has(#acc-black:checked) .f-bottom { background: #0a0e14; }
-.boxpick:has(#acc-black:checked) .inside   { opacity: 0; }
-
 .boxpick:has(#acc-grey:checked) .f       { background: rgba(150,168,185,.4); border-color: rgba(150,168,185,.6); }
 .boxpick:has(#acc-grey:checked) .f-top   { background: rgba(190,205,220,.5); }
 .boxpick:has(#acc-grey:checked) .inside  { filter: blur(4px); opacity: .6; }
 
 .boxpick:has(#acc-crystal:checked) .f      { background: linear-gradient(135deg, rgba(233,241,248,.10), rgba(233,241,248,.02) 55%); border-color: var(--seal-dim); }
 .boxpick:has(#acc-crystal:checked) .f-top  { background: linear-gradient(135deg, rgba(233,241,248,.16), rgba(233,241,248,.04)); }
+.boxpick:has(#acc-crystal:checked) .inside { opacity: 1; }
 
 /* scope height — the second axis, same trick */
 .boxpick:has(#sz-s:checked) .scene { --h: 84px; }
@@ -250,10 +265,12 @@ a { color: inherit; }
 .pick + .pick { margin-top: 16px; }
 
 /* the caption swaps with the selection — still no script */
-.cap { border-left: 2px solid var(--seal); padding-left: 13px; font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
+.cap { margin-top: 20px; border-left: 2px solid var(--seal); padding-left: 13px; font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
 .cap > p { display: none; }
+.cap > .c-black { display: block; }
 .cap > p b { color: var(--ink); }
-.boxpick:has(#acc-black:checked)   .cap > .c-black,
+.boxpick:has(#acc-grey:checked)    .cap > .c-black,
+.boxpick:has(#acc-crystal:checked) .cap > .c-black { display: none; }
 .boxpick:has(#acc-grey:checked)    .cap > .c-grey,
 .boxpick:has(#acc-crystal:checked) .cap > .c-crystal { display: block; }
 
@@ -267,8 +284,7 @@ a { color: inherit; }
   padding: 20px; display: flex; flex-direction: column; gap: 9px;
   transition: background .14s ease, border-color .14s ease;
 }
-.card:hover { border-color: var(--rule); }
-.card:hover { background: var(--surface); }
+.card:hover { border-color: var(--rule); background: var(--surface); }
 .card h3 { font-family: var(--font-display); text-transform: uppercase; font-size: 19px; letter-spacing: 0.03em; }
 .card p { font-size: 14.5px; line-height: 1.5; color: var(--smoke); }
 .card .tag {
@@ -291,6 +307,7 @@ a { color: inherit; }
 .split li:last-child { border-bottom: 0; }
 .split li::before { content: "+"; flex: none; font-family: var(--font-mono); font-size: 13px; color: var(--seal-dim); font-weight: 700; }
 .split.doesnt li::before { content: "−"; color: var(--smoke); }
+.note-spaced { margin-top: 22px; }
 .note { font-size: 13.5px; line-height: 1.5; color: var(--smoke); border-left: 2px solid var(--seal); padding-left: 12px; max-width: 70ch; }
 
 /* ---------------------------------------------------------- plans */
@@ -315,18 +332,22 @@ a { color: inherit; }
 .plan .btn { margin-top: auto; justify-content: center; }
 
 /* ---------------------------------------------------------- scan placeholder */
-.scan { border: 1px solid var(--rule); background: var(--surface); padding: clamp(1.25rem, 3vw, 2rem); }
 .scan-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .scan-row input {
   flex: 1 1 260px; min-width: 0; padding: 11px 13px;
   border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
   font-family: var(--font-mono); font-size: 14px;
 }
+.scan-row .btn:disabled { opacity: .5; cursor: not-allowed; }
 .scan-note { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--smoke); margin-top: 12px; }
 
 /* ---------------------------------------------------------- contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.75rem, 4vw, 3.5rem); align-items: start; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-h2 {
+  font-family: var(--font-display); text-transform: uppercase;
+  font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1; margin: 10px 0 16px;
+}
 .contact h2 em { font-style: normal; background: var(--seal); color: var(--seal-ink); padding: 0 0.1em; }
 .direct { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 11px; }
 .direct div { display: flex; gap: 14px; align-items: baseline; }
@@ -334,6 +355,9 @@ a { color: inherit; }
 .direct dd { margin: 0; font-size: 15px; }
 .direct a { color: var(--seal-dim); text-decoration: none; }
 .direct a:hover { color: var(--seal); text-decoration: underline; }
+.panel { border: 1px solid var(--rule); background: var(--surface); padding: clamp(1.25rem, 3vw, 2rem); }
+.panel-body { margin-top: 12px; font-size: 15px; line-height: 1.55; }
+.panel-cta { margin-top: 18px; }
 
 /* ---------------------------------------------------------- footer */
 .ftr { border-top: 1px solid var(--rule); }
@@ -347,17 +371,6 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
-
-/* ---------------------------------------------------------- bits the markup asked for */
-.contact-h2 {
-  font-family: var(--font-display); text-transform: uppercase;
-  font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1; margin: 10px 0 16px;
-}
-.panel { border: 1px solid var(--rule); background: var(--surface); padding: clamp(1.25rem, 3vw, 2rem); }
-.panel-body { margin-top: 12px; font-size: 15px; line-height: 1.55; }
-.panel-cta { margin-top: 18px; }
-.cap { margin-top: 20px; }
-.note-spaced { margin-top: 22px; }
 
 /* ---------------------------------------------------------- skip link */
 .skip {
@@ -385,11 +398,6 @@ a { color: inherit; }
    PORTAL MOCK — what a finding looks like in the product.
    Static markup, illustrative data, fictional target.
    ============================================================ */
-:root { --sev-extreme: #B3261E; --sev-high: #C1560F; --sev-elevated: #8A6A08; --sev-low: #3F6B57; }
-@media (prefers-color-scheme: dark) {
-  :root { --sev-extreme: #F1786F; --sev-high: #E9A15E; --sev-elevated: #D9BE55; --sev-low: #7FBFA1; }
-}
-
 .app { border: 1px solid var(--rule); background: var(--surface); }
 .app-hd {
   display: flex; align-items: center; gap: 10px; padding: 10px 14px;
@@ -402,8 +410,8 @@ a { color: inherit; }
 .app-body { padding: clamp(1rem, 3vw, 1.75rem); background: var(--paper); }
 
 .f-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
-.f-head h3 {
-  flex: 1 1 100%; font-family: var(--font-display); text-transform: uppercase;
+.f-title {
+  flex: 1 1 100%; font-weight: 700; font-family: var(--font-display); text-transform: uppercase;
   font-size: clamp(1.15rem, 2.4vw, 1.6rem); letter-spacing: 0.02em; line-height: 1.1; margin-top: 4px;
 }
 .sev, .state {

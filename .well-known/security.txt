@@ -1,0 +1,7 @@
+# A company that sells coordinated-disclosure intake publishes its own.
+# RFC 9116. Expires is mandatory and this file should be re-issued (and
+# ideally PGP-signed) before that date.
+Contact: mailto:security@gethacked.eu
+Expires: 2027-09-23T00:00:00.000Z
+Preferred-Languages: en, nl
+Canonical: https://gethacked.eu/.well-known/security.txt
