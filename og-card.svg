@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="GetHacked.eu — continuous offensive security">
+  <!-- Source for og-image.png. Export at 1200x630 (1x) and reference the PNG
+       from index.html; crawlers do not accept SVG here. -->
+  <rect width="1200" height="630" fill="#E7E9EB"/>
+  <rect y="0" width="1200" height="14" fill="#C8382C"/>
+
+  <!-- the glider, at 3.2x the header size, sitting on the baseline of the wordmark -->
+  <g transform="translate(96 168) scale(2.6)">
+    <g transform="translate(-62 -57)">
+      <polygon fill="#C8382C" points="100,97.69 69.36,80 100,62.31 130.64,80"/>
+      <g fill="#14191E">
+        <polygon points="98,141.15 67.36,123.46 67.36,158.85 98,176.54"/>
+        <polygon opacity=".62" points="102,141.15 132.64,123.46 132.64,158.85 102,176.54"/>
+        <polygon opacity=".62" points="136.64,81.15 167.28,63.46 167.28,98.85 136.64,116.54"/>
+        <polygon opacity=".62" points="136.64,121.15 167.28,103.46 167.28,138.85 136.64,156.54"/>
+      </g>
+    </g>
+  </g>
+
+  <g font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,sans-serif" font-weight="700">
+    <text x="440" y="300" font-size="112" letter-spacing="10" fill="#14191E">GETHACKED<tspan fill="#C8382C" letter-spacing="4">.EU</tspan></text>
+    <text x="444" y="372" font-size="40" letter-spacing="2" fill="#59656F">CONTINUOUS OFFENSIVE SECURITY</text>
+  </g>
+
+  <g font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="20" fill="#59656F" letter-spacing="3">
+    <text x="96" y="548">■ EU-HOSTED   ■ AI-AUGMENTED, HUMAN-SIGNED   ■ A PENTESTER REPLIES</text>
+  </g>
+  <rect x="96" y="500" width="1008" height="1" fill="#C8CDD1"/>
+</svg>

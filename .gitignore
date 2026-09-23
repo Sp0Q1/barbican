@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 *.log
 preview.html
+
+# exported from og-card.svg; commit the PNG, not this line
+og-image.png
