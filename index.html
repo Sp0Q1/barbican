@@ -26,6 +26,32 @@
 <meta name="twitter:description" content="Continuous pentesting and attack-surface monitoring for organisations with something online worth protecting.">
 
 <link rel="stylesheet" href="style.css">
+
+<!-- Not executable: a description of the organisation in the vocabulary search
+     engines read. The only script tag on the page, and it never runs. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GetHacked.eu",
+  "legalName": "LaatJeHacken B.V.",
+  "url": "https://gethacked.eu/",
+  "logo": "https://gethacked.eu/favicon.svg",
+  "image": "https://gethacked.eu/og-image.png",
+  "email": "security@gethacked.eu",
+  "address": { "@type": "PostalAddress", "addressLocality": "Sleeuwijk", "addressCountry": "NL" },
+  "areaServed": "EU",
+  "knowsAbout": ["penetration testing", "attack surface monitoring", "coordinated vulnerability disclosure", "threat modelling", "red teaming"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Continuous pentesting" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Attack-surface monitoring" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penetration testing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Coordinated disclosure" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Threat modelling" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Red and purple teaming" } }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
