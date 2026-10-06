@@ -4,4 +4,4 @@
 Contact: mailto:security@gethacked.eu
 Expires: 2027-09-23T00:00:00.000Z
 Preferred-Languages: en, nl
-Canonical: https://gethacked.eu/.well-known/security.txt
+Canonical: https://www.gethacked.eu/.well-known/security.txt
